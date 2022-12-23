@@ -1,0 +1,6 @@
+Function->
+ function <function name> (parameters) <scope> returns(return_type){
+    //code
+ }
+
+ 
