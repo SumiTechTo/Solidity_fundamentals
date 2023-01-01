@@ -1,7 +1,7 @@
-Types ->
 
-1. LOCAL VARIABLE ->
+
+ LOCAL VARIABLE ->
 Used inside the scope
 Not stored on the blockchain,used locally in a memory 
 
-2. GLOBAL VARIABLES ->
+
