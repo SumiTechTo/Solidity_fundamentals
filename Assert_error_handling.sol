@@ -7,6 +7,7 @@ contract assertstatement {
     function checkoverflow(uint256 _num1,uint256 _num2) public {
         uint256 sum= _num1+_num2;
         assert(sum<=255);//if
-        result=true;//else
+        result=true;
+       
     }
 }
