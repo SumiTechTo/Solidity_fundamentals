@@ -1,6 +1,6 @@
 //SPDX-License-Identifier:MIT
 pragma solidity ^0.8.0;
-
+//state variables are stored on the blockchain
 contract VP{
     
     uint256 Num1=2;
@@ -34,7 +34,7 @@ contract VP{
     function getDataP() public pure returns(uint256 lvar1,uint256 lvar2){
         lvar1=100;
         lvar2=500;
-    }//pure can only access local variable
+    }//pure can only access local variable,i.e,cannot modify or read from blockchain
 
     
 }
