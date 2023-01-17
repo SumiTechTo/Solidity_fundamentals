@@ -1,11 +1,13 @@
 boolean ->
+default value:False;
 Written as: bool 
 Values: True , 
         False
-default value:False;
+
 
 
 uint ->
+default value:0
 for POSITVE numbers
 Written as: uint 
 Range : uint8 (smallest) 0 to 255;
@@ -15,9 +17,10 @@ Range : uint8 (smallest) 0 to 255;
 
 
 int ->
+default value:0
 for NEGATIVE numbers 
 Written as:int 
-Range: int 256  -2**255 to 2**255-1
+Range: int256  -2**255 to 2**255-1
 default: int256
 
 
@@ -26,15 +29,18 @@ default: int256
 int public minInt = type(int).min;
 int public maxInt = type(int).max;
  once deployed it will give you the values in the variables minInt,maxInt
+ 
+ address->
+default:0x00000000000000000000000000000000000000;
+Syntax: address <variable name>= <value>;
+//byte is very gas efficient 
+
 
 array->
 Types: 1.fixed-sized byte array
        2.dynamic-sized byte array(default)
 
-address->
-Syntax: address <variable name>= <value>;
-default:0x00000000000000000000000000000000000000;
-//byte is very gas efficient 
+
 
 
 null or undefined in not available in solidity
