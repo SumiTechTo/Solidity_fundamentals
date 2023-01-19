@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 //Syntax:  mapping(keyType => valueType)
 //keyType can be anything
 // valueType can be mapping or array
+//Mappings are not iterable
 
 contract Mapping{
     //maps address to uint
