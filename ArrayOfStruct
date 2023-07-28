@@ -1,0 +1,39 @@
+// SPDX-License-Identifier: MIT 
+pragma solidity ^0.8.7; //^ tells the compiler that higher versions also work, >= 0.8.7<0.9.0 also works
+
+contract SimpleStorage{
+
+    //boolean, uint, int, address, bytes
+
+    //bytes
+
+    uint public favouriteNumber; //internal type is default
+   
+    struct People{
+        uint favouriteNumber;
+        string name;
+    }
+
+    People[] public people;
+    
+
+
+    function store(uint _favouriteNumber) public{
+        favouriteNumber=_favouriteNumber;
+    }
+
+    function retrieve() public view returns(uint256){
+        return favouriteNumber;
+    }
+    function addPerson(string memory _name, uint _favouriteNumber)public{
+        people.push(People(_favouriteNumber,_name));
+    }
+    
+    //view means that we ca only view something i.e doesnt allow change of state of blokchain. View func doesnt cost gas
+    //until it is called from a function that costs gas
+
+    //pure doesnt allow neither modification nor reading from blockchain
+
+     
+
+}
