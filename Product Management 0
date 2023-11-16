@@ -1,0 +1,62 @@
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.9;
+
+contract ProductManagement{
+    address public owner;
+    constructor(){
+        owner=msg.sender;
+    }
+    struct Products{
+        uint32 ID;
+        string name;
+        uint32 units;
+        uint32 price;
+    }
+    Products[] public prod;
+    function addProducts(uint32 _id,string memory _name, uint32 _units, uint32 _price) public {
+        uint32 flag=0;
+        uint n=prod.length;
+        for (uint32 i=0;i<n;i++){
+            if(_id==prod[i].ID){
+                flag++;
+            }
+        }
+        if (flag==0){
+            addNewProduct(_id,_name,_units,_price);
+        }
+        else {
+            addUnits(_id,_units);
+        }
+        
+    }
+    function addNewProduct(uint32 _id,string memory _name,uint32 _units, uint32 _price) public{
+        
+        prod.push(Products(_id,_name,_units,_price));
+    }
+
+    function addUnits(uint32 _id,uint32 _units) public {
+        uint32 n=0;
+        for (uint32 i=0;i<prod.length;i++){
+            if (_id==prod[i].ID){
+                n=i;
+            }
+        }
+       prod[n].units+=_units;
+    }
+    function getList() public view returns(Products[] memory){
+        return prod;
+    }
+    function updatePrice(uint32 _id,uint32 _newprice) public {
+        require(msg.sender==owner,"Only owner can update pricing");
+        uint32 n=0;
+        for (uint32 i=0;i<prod.length;i++){
+            if (_id==prod[i].ID){
+                n=i;
+            }
+        }
+
+       prod[n].price=_newprice;
+    }
+
+
+}
